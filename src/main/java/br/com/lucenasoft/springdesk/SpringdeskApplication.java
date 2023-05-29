@@ -1,4 +1,4 @@
-package tech.jamersondev.springdesk;
+package br.com.lucenasoft.springdesk;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
