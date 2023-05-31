@@ -1,6 +1,6 @@
-package br.com.lucenasoft.springdesk.models;
+package br.com.lucenasoft.helpdesk.models;
 
-import br.com.lucenasoft.springdesk.Enums.ProfileEnum;
+import br.com.lucenasoft.helpdesk.Enums.ProfileEnum;
 import jakarta.persistence.Entity;
 
 import java.util.UUID;

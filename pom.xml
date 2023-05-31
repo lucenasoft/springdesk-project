@@ -8,11 +8,11 @@
 		<version>2.6.11</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>br.com.lucenasoft.springdesk</groupId>
-	<artifactId>springdesk</artifactId>
+	<groupId>br.com.lucenasoft.helpdesk</groupId>
+	<artifactId>helpdesk</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>springdesk</name>
-	<description>Spring Security</description>
+	<name>helpdesk</name>
+	<description>Help Desk</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>

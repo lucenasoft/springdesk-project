@@ -1,4 +1,4 @@
-package br.com.lucenasoft.springdesk.controllers;
+package br.com.lucenasoft.helpdesk.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

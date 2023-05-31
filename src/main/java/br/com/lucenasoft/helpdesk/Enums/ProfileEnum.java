@@ -1,4 +1,4 @@
-package br.com.lucenasoft.springdesk.Enums;
+package br.com.lucenasoft.helpdesk.Enums;
 
 public enum ProfileEnum {
     ADMIN("Administrator"),

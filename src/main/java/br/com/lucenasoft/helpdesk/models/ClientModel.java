@@ -1,4 +1,4 @@
-package br.com.lucenasoft.springdesk.models;
+package br.com.lucenasoft.helpdesk.models;
 
 public class ClientModel extends PersonAbstract {
 
