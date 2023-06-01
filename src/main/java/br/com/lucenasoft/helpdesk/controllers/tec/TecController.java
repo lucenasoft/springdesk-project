@@ -1,8 +1,9 @@
-package br.com.lucenasoft.helpdesk.controllers.client;
+package br.com.lucenasoft.helpdesk.controllers.tec;
+
 
 import br.com.lucenasoft.helpdesk.Enums.ProfileEnum;
-import br.com.lucenasoft.helpdesk.models.ClientModel;
-import br.com.lucenasoft.helpdesk.repositories.ClientRepository;
+import br.com.lucenasoft.helpdesk.models.TecModel;
+import br.com.lucenasoft.helpdesk.repositories.TecRepository;
 import br.com.lucenasoft.helpdesk.utils.UploadImg;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,36 +12,36 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RequestMapping("client")
-public class ClientController {
+@RequestMapping("tec")
+public class TecController {
 
     @Autowired
-    private ClientRepository repository;
+    private TecRepository repository;
 
     @GetMapping("/register")
-    public ModelAndView register(ClientModel client) {
-        ModelAndView mv = new ModelAndView("client/register");
-        mv.addObject("user", client);
+    public ModelAndView register(TecModel tec) {
+        ModelAndView mv = new ModelAndView("tec/register");
+        mv.addObject("tec", tec);
         mv.addObject("profiles", ProfileEnum.values());
         return mv;
     }
 
     @PostMapping("/register")
-    public ModelAndView register(@ModelAttribute ClientModel client, @RequestParam("file")MultipartFile img){
-        ModelAndView mv = new ModelAndView("client/register");
-        mv.addObject("user", client);
+    public ModelAndView register(@ModelAttribute TecModel tec, @RequestParam("file") MultipartFile img){
+        ModelAndView mv = new ModelAndView("tec/register");
+        mv.addObject("tec", tec);
 
         try {
             if(UploadImg.uploadImg(img)) {
-                client.setImgURL(img.getOriginalFilename());
+                tec.setImgURL(img.getOriginalFilename());
             }
-            repository.save(client);
+            repository.save(tec);
 
             mv.setViewName("redirect:/index");
-            return mv;
         } catch (Exception e) {
             mv.addObject("msgError", e.getMessage());
             return mv;
         }
+        return mv;
     }
 }

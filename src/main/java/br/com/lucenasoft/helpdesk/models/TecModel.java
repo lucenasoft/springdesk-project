@@ -6,7 +6,7 @@ import jakarta.persistence.OneToMany;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity
+@Entity(name = "tecs")
 public class TecModel extends PersonAbstract {
 
     @OneToMany

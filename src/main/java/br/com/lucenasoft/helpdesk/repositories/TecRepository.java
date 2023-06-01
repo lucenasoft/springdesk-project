@@ -1,4 +1,7 @@
 package br.com.lucenasoft.helpdesk.repositories;
 
-public class TecRepository {
+import br.com.lucenasoft.helpdesk.models.TecModel;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface TecRepository extends JpaRepository<TecModel, Long> {
 }
