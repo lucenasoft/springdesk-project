@@ -26,6 +26,8 @@ public class UploadImg {
                 stream.write(img.getBytes());
                 stream.close();
 
+                success = true;
+
             } catch (Exception e) {
                 System.out.println("Error uploading" + e.getMessage());
             }
