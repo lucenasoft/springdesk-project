@@ -10,9 +10,7 @@ public class StartController {
 
     @GetMapping("home")
     public ModelAndView start(){
-        ModelAndView mv = new ModelAndView("home/index");
-        return mv;
+        return new ModelAndView("home/index");
     }
-
 
 }

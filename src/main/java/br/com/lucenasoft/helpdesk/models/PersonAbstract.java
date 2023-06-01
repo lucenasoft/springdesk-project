@@ -1,14 +1,16 @@
 package br.com.lucenasoft.helpdesk.models;
 
 import br.com.lucenasoft.helpdesk.Enums.ProfileEnum;
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 
-import java.util.UUID;
 
-@Entity
+
+@MappedSuperclass
 public abstract class PersonAbstract { // Classe abstract não pode ser instanciada, somente extendida, usada como modelo
 
-    private UUID id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String name;
     private String email;
     private String password;
@@ -17,7 +19,7 @@ public abstract class PersonAbstract { // Classe abstract não pode ser instanci
 
     public PersonAbstract(){}
 
-    public PersonAbstract(UUID id, String name, String email, String password, String imgURL, ProfileEnum profile) {
+    public PersonAbstract(Long id, String name, String email, String password, String imgURL, ProfileEnum profile) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -26,7 +28,7 @@ public abstract class PersonAbstract { // Classe abstract não pode ser instanci
         this.profile = profile;
     }
 
-    public UUID getId() {
+    public Long getId() {
         return id;
     }
 
